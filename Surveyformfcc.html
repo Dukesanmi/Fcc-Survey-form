@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Survey Form</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Raleway&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+  body {
+    /*background: #ededf5;*/
+    background: #f7f7ff;
+    font-family: Raleway;
+    */
+    /*font-family: lato;*/
+
+
+  }
+
+  header img {
+    width: 210px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 580px;
+    /*max-width: 100%;*/
+  }
+
+  #title {
+    color: #1b1b32;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  #description {
+    text-align: center;
+    color: #1b1b32;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+  }
+
+  #form-container {
+    background: #ffffff;
+    opacity: 0.85;
+    position: absolute;
+    left: 310px;
+    padding: 3% 3%;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.09), 0 3px 3px rgba(0, 0, 0, 0.13);
+  }
+
+  #survey-form {
+    display: flex;
+    flex-direction: column;
+    font-family: Raleway;
+    font-size: 17px;
+  }
+
+  label {
+    font-weight: 900;
+    padding-bottom: 5px;
+  }
+
+  option {
+    font-family: Raleway;
+    font-size: 17px;
+  }
+
+  .input-field {
+    font-size: 15px;
+    width: 650px;
+    height: 35px;
+    border-style: solid;
+    border-width: 0.6px;
+    border-color: silver;
+    border-radius: 5px;
+    padding-left: 3px;
+  }
+
+  #text-area {
+    width: 650px;
+    height: 150px;
+    font-size: 17px;
+    font-family: Raleway;
+    resize: none;
+    padding-left: 2px;
+  }
+
+  #submit {
+    color: #ffffff;
+    background-color: #0f0f1c;
+    padding: 2%;
+    width: 650px;
+    font-family: Raleway;
+    position: relative;
+    left: 6px;
+    border-style: none;
+    border-radius: 5px;
+  }
+
+  /*----------------Media Queries ---------------------*/
+  /*ipad and ipad pro screen*/
+  @media only screen and (max-width: 1024px) {
+    header img {
+      /*width: 50%;*/
+      position: absolute;
+      right: 38%;
+    }
+
+    #main {
+      position: relative;
+      right: 50px;
+    }
+
+    #title {
+      width: 70%;
+      text-align: center;
+      position: relative;
+      left: 21%;
+    }
+
+    #description {
+      width: 90%;
+      position: relative;
+      left: 10%;
+
+    }
+
+    #survey-form {
+      width: 40%;
+      font-size: 90%;
+
+    }
+
+    #form-container {
+      background: ;
+      width: 80%;
+      padding-right: -50px;
+      position: relative;
+      left: 50px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .input-field {
+      width: 230%;
+      margin-left: 10%;
+      font-size: 80%;
+    }
+
+    label {
+      margin-left: 10%;
+      width: 180%;
+    }
+
+    #text-area {
+      width: 220%;
+      font-size: 100%;
+      margin-right: 1%;
+    }
+
+    #submit {
+      width: 190%;
+      padding: 6%;
+      position: relative;
+      left: 15%;
+    }
+  }
+</style>
+
+<body>
+  <header>
+    <img src="https://res.cloudinary.com/dxjqr24gm/image/upload/v1583927507/fcc_secondary_large.svg"
+      alt="freeCodeCamp-logo" id="logo" width="200px" height="auto"><br><br>
+  </header>
+  <main id="main">
+    <h1 id="title" align="center">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve your freeCodeCamp experience</p>
+    <div id="form-container">
+      <form id="survey-form">
+        <label for="name" id="name-label">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required class="input-field"><br><br>
+        <label for="email" id="email-label">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email address" required
+          class="input-field"><br><br>
+        <label for="number" id="number-label">Age (optional)</label>
+        <input type="number" name="age" id="number" min="5" max="99" placeholder="How old are you?"
+          class="input-field"><br><br>
+        <label>Which option best describes your current role?</label>
+        <select id="dropdown" class="input-field">
+          <option selected disabled hidden>Select current role</option>
+          <option value="student">Student</option>
+          <option value="nysc">NYSC</option>
+          <option value="full-time-job">Full Time Job</option>
+          <option value="full-time-learner">Full Time Learner</option>
+          <option value="classified">That information is classified</option>
+          <option value="other">Other</option>
+        </select><br><br>
+        <label>Would you recommend freeCodeCamp to a friend?</label>
+        <div>
+          <input type="radio" name="rec-fcc" value="yes">Definitely<br>
+          <input type="radio" name="rec-fcc" value="maybe">Maybe<br>
+          <input type="radio" name="rec-fcc" value="no">Not sure<br><br><br>
+        </div>
+        <label>What is your favorite feature of freeCodeCamp?</label>
+        <select class="input-field">
+          <option selected disabled hidden>Select an option</option>
+          <option>Challenges</option>
+          <option>Projects</option>
+          <option>Community</option>
+          <option>Open Source</option>
+        </select><br><br>
+        <label>What would you like to see improved? (Check all that apply)</label>
+        <div>
+          <input type="checkbox" name="" value="front-end">Front-end Projects<br>
+          <input type="checkbox" name="" value="back-end">Back-end Projects<br>
+          <input type="checkbox" name="" value="data-visualization">Data Visualization <br>
+          <input type="checkbox" name="" value="challenges">Challenges<br>
+          <input type="checkbox" name="" value="open-source-community">Open Source Community<br>
+          <input type="checkbox" name="" value="gitter-help-rooms">Gitter help rooms<br>
+          <input type="checkbox" name="" value="videos">Videos<br>
+          <input type="checkbox" name="" value="city-meetups">City Meetups<br>
+          <input type="checkbox" name="" value="wiki">Wiki<br>
+          <input type="checkbox" name="" value="forum">Forum<br>
+          <input type="checkbox" name="" value="additional-courses">Additional Courses<br><br>
+        </div>
+        <label>Any comments or suggestions</label>
+        <textarea placeholder="Enter your comment here..." id="text-area"></textarea><br><br>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+
+  </main>
+
+</body>
+
+</html>
